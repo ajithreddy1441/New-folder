@@ -20,9 +20,9 @@ const firebaseConfig = {
   function submitForm(e) {
     e.preventDefault();
   
-    var name = getElementVal("username");
-    var emailid = getElementVal("email");
-    var msgContent = getElementVal("password");
+    var username = getElementVal("username");
+    var email = getElementVal("email");
+    var password = getElementVal("password");
   
     saveMessages(username, email, password);
   
