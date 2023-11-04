@@ -13,7 +13,7 @@ const firebaseConfig = {
   firebase.initializeApp(firebaseConfig);
   
   // reference your database
-  var contactFormDB = firebase.database().ref("registrationForm");
+  var registrationFormDB = firebase.database().ref("registrationForm");
   
   document.getElementById("registrationForm").addEventListener("submit", submitForm);
   
@@ -32,9 +32,9 @@ const firebaseConfig = {
   }
   
   const saveMessages = (username, email, password) => {
-    var newContactForm = contactFormDB.push();
+    var newregistrationForm = registrationFormDB.push();
   
-    newContactForm.set({
+    newregistrationtForm.set({
       username: username,
       email: email,
       password: password,
