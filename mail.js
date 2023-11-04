@@ -34,7 +34,7 @@ const firebaseConfig = {
   const saveMessages = (username, email, password) => {
     var newregistrationForm = registrationFormDB.push();
   
-    newregistrationtForm.set({
+    newregistrationForm.set({
       username: username,
       email: email,
       password: password,
