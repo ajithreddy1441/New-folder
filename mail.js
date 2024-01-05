@@ -18,27 +18,21 @@ const firebaseConfig = {
   
   function submitForm(e) {
     e.preventDefault();
-  
     var username = getElementVal("username");
     var email = getElementVal("email");
     var password = getElementVal("password");
-    var registrationFormDB = firebase.database().ref("registrationForm").child(username);
-
+    var registrationFormDB = firebase.database().ref(username);
     saveMessages(username, email, password,registrationFormDB);
-  
-  
-    //   reset the form
-    document.getElementById("registrationForm").reset();
   }
   
-  const saveMessages = (username, email, password,registrationFormDB) => {
-    var newregistrationForm = registrationFormDB.push();
-  
-    newregistrationForm.set({
+  const saveMessages = (username, email, password,registrationFormDB) => 
+  {  
+    registrationFormDB.set({
       username: username,
       email: email,
       password: password,
     });
+    document.getElementById("registrationForm").reset();
   };
   
   const getElementVal = (id) => {
